@@ -1,0 +1,53 @@
+basePath: /
+definitions:
+  internal.Request:
+    properties:
+      items_ordered:
+        type: integer
+      pack_sizes:
+        items:
+          type: integer
+        type: array
+    type: object
+  internal.Response:
+    properties:
+      result:
+        items:
+          type: integer
+        type: array
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /task:
+    post:
+      consumes:
+      - application/json
+      description: do task
+      operationId: dp-task
+      parameters:
+      - description: query params
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/internal.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/internal.Response'
+      summary: Do Task
+swagger: "2.0"

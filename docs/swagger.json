@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server Petstore server.",
+        "title": "Swagger Example API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/task": {
+            "post": {
+                "description": "do task",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Do Task",
+                "operationId": "dp-task",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/internal.Request"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/internal.Response"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "internal.Request": {
+            "type": "object",
+            "properties": {
+                "items_ordered": {
+                    "type": "integer"
+                },
+                "pack_sizes": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "internal.Response": {
+            "type": "object",
+            "properties": {
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}
