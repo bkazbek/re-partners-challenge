@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	echoSwagger "github.com/swaggo/echo-swagger"
 	"net/http"
 	"os"
@@ -32,6 +33,11 @@ func main() {
 	h := internal.Handler{}
 
 	e := echo.New()
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowHeaders: []string{"*"},
+		AllowMethods: []string{"*"},
+	}))
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 	e.POST("/task", h.TaskHandler)
 

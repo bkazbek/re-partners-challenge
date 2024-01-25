@@ -22,14 +22,19 @@ github.com/go-openapi/spec
 # github.com/go-openapi/swag v0.19.15
 ## explicit; go 1.11
 github.com/go-openapi/swag
+# github.com/golang-jwt/jwt v3.2.2+incompatible
+## explicit
+github.com/golang-jwt/jwt
 # github.com/josharian/intern v1.0.0
 ## explicit; go 1.5
 github.com/josharian/intern
 # github.com/labstack/echo/v4 v4.11.4
 ## explicit; go 1.18
 github.com/labstack/echo/v4
+github.com/labstack/echo/v4/middleware
 # github.com/labstack/gommon v0.4.2
 ## explicit; go 1.18
+github.com/labstack/gommon/bytes
 github.com/labstack/gommon/color
 github.com/labstack/gommon/log
 # github.com/mailru/easyjson v0.7.7
@@ -80,6 +85,9 @@ golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
 golang.org/x/text/width
+# golang.org/x/time v0.5.0
+## explicit; go 1.18
+golang.org/x/time/rate
 # golang.org/x/tools v0.7.0
 ## explicit; go 1.18
 golang.org/x/tools/go/ast/astutil
